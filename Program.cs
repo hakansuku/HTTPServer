@@ -10,7 +10,7 @@ namespace HttpListenerExample
     class HttpServer
     {
         public static HttpListener listener;
-        public static string url = "http://*";
+        public static string url = "http://localhost:8000";
         public static int pageViews = 0;
         public static int requestCount = 0;
         public static string pageData = 
