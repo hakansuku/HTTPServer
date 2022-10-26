@@ -45,7 +45,21 @@ namespace HttpListenerExample
 
 
 
-                // define connection string
+                
+
+                // If `shutdown` url requested w/ POST, then shutdown the server after serving the page
+                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath == "/shutdown"))
+                {
+                    Console.WriteLine("Shutdown requested");
+                    runServer = false;
+                }
+
+                // Make sure we don't increment the page views counter if `favicon.ico` is requested
+                if (req.Url.AbsolutePath != "/favicon.ico")
+                    {
+                    pageViews += 1;
+
+                    // define connection string
                 string connectionString = "Server=tcp:mkazsql.database.windows.net,1433;Initial Catalog=mkazSQL;Persist Security Info=False;User ID=ubuntu;Password=M3purple####;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
                 // Provide the query string 
@@ -95,16 +109,7 @@ namespace HttpListenerExample
 
                 }
 
-                // If `shutdown` url requested w/ POST, then shutdown the server after serving the page
-                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath == "/shutdown"))
-                {
-                    Console.WriteLine("Shutdown requested");
-                    runServer = false;
-                }
-
-                // Make sure we don't increment the page views counter if `favicon.ico` is requested
-                if (req.Url.AbsolutePath != "/favicon.ico")
-                    pageViews += 1;
+                    }
 
                 // Write the response info
                 string disableSubmit = !runServer ? "disabled" : "";
