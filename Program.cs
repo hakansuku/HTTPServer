@@ -43,13 +43,7 @@ namespace HttpListenerExample
                 HttpListenerRequest req = ctx.Request;
                 HttpListenerResponse resp = ctx.Response;
 
-                // Print out some info about the request
-                Console.WriteLine("Request #: {0}", ++requestCount);
-                Console.WriteLine(req.Url.ToString());
-                Console.WriteLine(req.HttpMethod);
-                Console.WriteLine(req.UserHostName);
-                Console.WriteLine(req.UserAgent);
-                Console.WriteLine();
+
 
                 // define connection string
                 string connectionString = "Server=tcp:mkazsql.database.windows.net,1433;Initial Catalog=mkazSQL;Persist Security Info=False;User ID=ubuntu;Password=M3purple####;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -82,6 +76,14 @@ namespace HttpListenerExample
                                 reader[0], reader[1], reader[2]);
                             
                         }
+                        Console.WriteLine(rInt+" records fetched");
+                                        // Print out some info about the request
+                        Console.WriteLine("Request #: {0}", ++requestCount);
+                        Console.WriteLine(req.Url.ToString());
+                        Console.WriteLine(req.HttpMethod);
+                        Console.WriteLine(req.UserHostName);
+                        Console.WriteLine(req.UserAgent);
+                        Console.WriteLine();
                         reader.Close();
                         connection.Close();
 
