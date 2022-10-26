@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj": {}
+    "c:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj": {
+    "c:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj",
+        "projectUniqueName": "c:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj",
         "projectName": "HTTPServer",
-        "projectPath": "C:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj",
+        "projectPath": "c:\\Users\\minkook.kang\\Documents\\HTTPServer\\HTTPServer.csproj",
         "packagesPath": "C:\\Users\\minkook.kang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\minkook.kang\\Documents\\HTTPServer\\obj\\",
+        "outputPath": "c:\\Users\\minkook.kang\\Documents\\HTTPServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\minkook.kang\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

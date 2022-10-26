@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace HttpListenerExample
 {
@@ -13,7 +14,7 @@ namespace HttpListenerExample
         public static string url = "http://*:8000/";
         public static int pageViews = 0;
         public static int requestCount = 0;
-        public static string pageData = 
+        public static string pageData =
             "<!DOCTYPE>" +
             "<html>" +
             "  <head>" +
@@ -50,6 +51,48 @@ namespace HttpListenerExample
                 Console.WriteLine(req.UserAgent);
                 Console.WriteLine();
 
+                // define connection string
+                string connectionString = "Server=tcp:mkazsql.database.windows.net,1433;Initial Catalog=mkazSQL;Persist Security Info=False;User ID=ubuntu;Password=M3purple####;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+                // Provide the query string 
+                string queryString =
+                "SELECT ProductID, ListPrice, Name from SalesLT.Product ORDER BY ListPrice DESC;";
+
+                using (SqlConnection connection =
+                new SqlConnection(connectionString))
+                {
+                    // Create the Command object.
+                    SqlCommand command = new SqlCommand(queryString, connection);
+
+                    // Open the connection in a try/catch block.
+                    // Create and execute the DataReader, writing the result
+                    // set to the console window.
+
+                    try
+                    {
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        Random r = new Random();
+                        int rInt = r.Next(0, 295);
+
+                        for (int i = 0; i < rInt; i++)
+                        {
+                            reader.Read();
+                            Console.WriteLine("\t{0}\t{1}\t{2}",
+                                reader[0], reader[1], reader[2]);
+                            
+                        }
+                        reader.Close();
+                        connection.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+
+                }
+
                 // If `shutdown` url requested w/ POST, then shutdown the server after serving the page
                 if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath == "/shutdown"))
                 {
@@ -82,6 +125,7 @@ namespace HttpListenerExample
             listener.Prefixes.Add(url);
             listener.Start();
             Console.WriteLine("Listening for connections on {0}", url);
+
 
             // Handle requests
             Task listenTask = HandleIncomingConnections();
