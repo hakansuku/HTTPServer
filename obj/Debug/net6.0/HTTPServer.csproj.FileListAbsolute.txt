@@ -1,0 +1,15 @@
+C:\Users\minkook.kang\Documents\HTTPServer\bin\Debug\net6.0\HTTPServer.exe
+C:\Users\minkook.kang\Documents\HTTPServer\bin\Debug\net6.0\HTTPServer.deps.json
+C:\Users\minkook.kang\Documents\HTTPServer\bin\Debug\net6.0\HTTPServer.runtimeconfig.json
+C:\Users\minkook.kang\Documents\HTTPServer\bin\Debug\net6.0\HTTPServer.dll
+C:\Users\minkook.kang\Documents\HTTPServer\bin\Debug\net6.0\HTTPServer.pdb
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.csproj.AssemblyReference.cache
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.AssemblyInfoInputs.cache
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.AssemblyInfo.cs
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.csproj.CoreCompileInputs.cache
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.dll
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\refint\HTTPServer.dll
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.pdb
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\HTTPServer.genruntimeconfig.cache
+C:\Users\minkook.kang\Documents\HTTPServer\obj\Debug\net6.0\ref\HTTPServer.dll
